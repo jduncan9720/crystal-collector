@@ -12,7 +12,7 @@ var targetScore = 0;
 setup();
 
 //Function that sets up a new game
-function setup(){
+function setup() {
     //Change target number
     targetScore = Math.floor(Math.random() * 40) + 20;
     //Change current score
@@ -27,50 +27,48 @@ function setup(){
     }
     //Display target score,wins,losses,and current score
     document.getElementById("target-number").innerHTML = targetScore;
-    document.getElementById("wins").innerHTML = wins;
+    document.getElementById("winstotal").innerHTML = wins;
     document.getElementById("losses").innerHTML = losses;
     document.getElementById("score").innerHTML = currentScore;
 }
-    
-//Onclick function that says on click of any crystal, add their number to the player score
-$("#bluegem").on("click", function(){gemClick("blue")});
-$("#greengem").on("click", function(){gemClick("green")});
-$("#redgem").on("click", function(){gemClick("red")});
-$("#yellowgem").on("click", function(){gemClick("yellow")});
 
-function gemClick(color)
-{
-    if(color == "blue")                                           
-    {
+//Onclick function that says on click of any crystal, add their number to the player score
+$("#bluegem").on("click", function () { gemClick("blue") });
+$("#greengem").on("click", function () { gemClick("green") });
+$("#redgem").on("click", function () { gemClick("red") });
+$("#yellowgem").on("click", function () { gemClick("yellow") });
+
+function gemClick(color) {
+    if (color == "blue") {
         currentScore = crystal1 + currentScore;
         document.getElementById("score").innerHTML = currentScore
-        // //Update currentScore
     }
-    else if(color == "green")
-    {
+    else if (color == "green") {
         currentScore = crystal2 + currentScore;
         document.getElementById("score").innerHTML = currentScore
     }
-    else if(color == "red")
-    {
+    else if (color == "red") {
         currentScore = crystal3 + currentScore;
         document.getElementById("score").innerHTML = currentScore
     }
-    else if(color == "yellow")
-    {
+    else if (color == "yellow") {
         currentScore = crystal4 + currentScore;
         document.getElementById("score").innerHTML = currentScore
     }
 
-    if(currentScore = targetScore){
-        //Do stuff
-    }
-    else if(currentScore > targetScore){
-        //Do stuff
-    }
-}
-    
+    if (currentScore == targetScore) {
+        document.getElementById("winner").innerHTML = "You Win"
+        wins++
+        document.getElementById('winstotal').innerHTML = wins
+    }   //     //Do stuff
 
+    // else if (currentScore > targetScore) {}
+    
+    // // //     //Do stuff
+    // // }
+
+
+}
 
     //Check if current score is less than, equal to, or greater than target number
         //If less than, do nothing
