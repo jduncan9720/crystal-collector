@@ -18,8 +18,8 @@ function setup() {
     //Change current score
     currentScore = 0;
     //Change crystal numbers
-    crystal1 = Math.floor(Math.random() * 10);
-    crystal2 = Math.floor(Math.random() * 10);
+    crystal1 = Math.floor(Math.random() * 9) + 1;
+    crystal2 = Math.floor(Math.random() * 9) + 1;
     crystal3 = Math.floor(Math.random() * 10);
     crystal4 = Math.floor(Math.random() * 10);
     if (crystal1 % 2 == 0) {
@@ -28,7 +28,7 @@ function setup() {
     //Display target score,wins,losses,and current score
     document.getElementById("target-number").innerHTML = targetScore;
     document.getElementById("winstotal").innerHTML = wins;
-    document.getElementById("losses").innerHTML = losses;
+    document.getElementById("lossestotal").innerHTML = losses;
     document.getElementById("score").innerHTML = currentScore;
 }
 
@@ -41,32 +41,38 @@ $("#yellowgem").on("click", function () { gemClick("yellow") });
 function gemClick(color) {
     if (color == "blue") {
         currentScore = crystal1 + currentScore;
-        document.getElementById("score").innerHTML = currentScore
+        document.getElementById("score").innerHTML = currentScore;
     }
     else if (color == "green") {
         currentScore = crystal2 + currentScore;
-        document.getElementById("score").innerHTML = currentScore
+        document.getElementById("score").innerHTML = currentScore;
     }
     else if (color == "red") {
         currentScore = crystal3 + currentScore;
-        document.getElementById("score").innerHTML = currentScore
+        document.getElementById("score").innerHTML = currentScore;
     }
     else if (color == "yellow") {
         currentScore = crystal4 + currentScore;
-        document.getElementById("score").innerHTML = currentScore
+        document.getElementById("score").innerHTML = currentScore;
     }
 
     if (currentScore == targetScore) {
-        document.getElementById("winner").innerHTML = "You Win"
-        wins++
-        document.getElementById('winstotal').innerHTML = wins
-    }   //     //Do stuff
+        document.getElementById("winstatus").innerHTML = "You Win";
+        wins++;
+        document.getElementById('winstotal').innerHTML = wins;
+        setup();
 
-    // else if (currentScore > targetScore) {}
-    
-    // // //     //Do stuff
-    // // }
-
+    }  
+    else if (currentScore > targetScore) {
+        document.getElementById("winstatus").innerHTML = "You Lose";
+        losses++;
+        document.getElementById('lossestotal').innerHTML = losses;
+        setup();
+        //     //Do stuff
+    }
+    else {
+        document.getElementById("winstatus").innerHTML = "";
+    }
 
 }
 
