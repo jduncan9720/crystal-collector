@@ -20,16 +20,16 @@ function setup() {
     //Change crystal numbers
     crystal1 = Math.floor(Math.random() * 9) + 1;
     crystal2 = Math.floor(Math.random() * 9) + 1;
-    crystal3 = Math.floor(Math.random() * 10);
-    crystal4 = Math.floor(Math.random() * 10);
+    crystal3 = Math.floor(Math.random() * 9) + 1;
+    crystal4 = Math.floor(Math.random() * 9) + 1;
     if (crystal1 % 2 == 0) {
         crystal1++;
     }
-    //Display target score,wins,losses,and current score
-    document.getElementById("target-number").innerHTML = targetScore;
-    document.getElementById("winstotal").innerHTML = wins;
-    document.getElementById("lossestotal").innerHTML = losses;
-    document.getElementById("score").innerHTML = currentScore;
+
+    $("#target-number").html(targetScore);
+    $("#winstotal").html(wins);
+    $("#lossestotal").html(losses);
+    $("#score").html(currentScore);
 }
 
 //Onclick function that says on click of any crystal, add their number to the player score
@@ -41,52 +41,41 @@ $("#yellowgem").on("click", function () { gemClick("yellow") });
 function gemClick(color) {
     if (color == "blue") {
         currentScore = crystal1 + currentScore;
-        document.getElementById("score").innerHTML = currentScore;
+        $("#score").html(currentScore);
     }
     else if (color == "green") {
         currentScore = crystal2 + currentScore;
-        document.getElementById("score").innerHTML = currentScore;
+        $("#score").html(currentScore);
     }
     else if (color == "red") {
         currentScore = crystal3 + currentScore;
-        document.getElementById("score").innerHTML = currentScore;
+        $("#score").html(currentScore);
     }
     else if (color == "yellow") {
         currentScore = crystal4 + currentScore;
-        document.getElementById("score").innerHTML = currentScore;
+        $("#score").html(currentScore);
     }
-
-    if (currentScore == targetScore) {
-        document.getElementById("winstatus").innerHTML = "You Win";
-        wins++;
-        document.getElementById('winstotal').innerHTML = wins;
-        setup();
-
-    }  
-    else if (currentScore > targetScore) {
-        document.getElementById("winstatus").innerHTML = "You Lose";
-        losses++;
-        document.getElementById('lossestotal').innerHTML = losses;
-        setup();
-        //     //Do stuff
-    }
-    else {
-        document.getElementById("winstatus").innerHTML = "";
-    }
-
-}
 
     //Check if current score is less than, equal to, or greater than target number
         //If less than, do nothing
         //If greater than, run lose function
         //If equal to, run win function
 
-//A winner is you function
-    //Display winner text
-    //Increment wins
-    //Run new game function
+    if (currentScore == targetScore) {
+        $("#winstatus").html("You Win!!");
+        wins++;
+        $("#winstotal").html(wins);
+        setup();
+    }  
+    else if (currentScore > targetScore) {
+        $("#winstatus").html("You Lose!!");
+        losses++;
+        $("#lossestotal").html(losses);
+        setup();
+        //     //Do stuff
+    }
+    else {
+        $("#winstatus").html("");
+    }
 
-//You lose function
-    //Display loser text
-    //Increment losses
-    //Run new game function
+}
