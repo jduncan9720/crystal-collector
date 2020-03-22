@@ -7,6 +7,9 @@ h1 {
     color: azure;
     font-family:'Orbitron', sans-serif; ;
 }
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
 .empty {
     width: 50px;
 
@@ -15,8 +18,14 @@ h1 {
     color: green;
 }
 #lossestotal {
-    color: red ;
+    color: red;
+}
+#target-number {
+    color: blue;
+}
+#score {
+    color: blueviolet;
 }
 h3 {
-    font-family: 'Orbitron', sans-serif; ;
+    font-family: 'Orbitron', sans-serif; 
 }
