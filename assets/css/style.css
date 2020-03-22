@@ -1,0 +1,22 @@
+body{
+    background-image: url("../images/caveimage.jpg");
+}
+
+h1 {
+    text-align: center;
+    color: azure;
+    font-family:'Orbitron', sans-serif; ;
+}
+.empty {
+    width: 50px;
+
+}
+#winstotal {
+    color: green;
+}
+#lossestotal {
+    color: red ;
+}
+h3 {
+    font-family: 'Orbitron', sans-serif; ;
+}

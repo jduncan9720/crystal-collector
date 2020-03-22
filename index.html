@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -11,43 +12,58 @@
     <title>Crystal Collector</title>
   </head>
   <body>
-    <h1>Crystal Collector</h1>
-    <div class="container-fluid">
-        <div class="container border">
+    
+    <div class="container-fluid mt-4">
+        <h1>Crystal Collector</h1>
+        <div class="container bg-white">
             <div class="row">
-                <div class="column-lg-3 border">
-                Instructions go here!
+                <div class="column-lg-3 pl-2">
+                <h3>Instructions:</h3>
+                <p>You will be given a random target number at the start of each game. <br><br>
+                Clicking on one of the crytsals below will start the game and add a 
+                specific amount of points to your total score.<br><br>
+                Win the game by clicking the crystals until your score matches the target number.<br><br>
+                The value of each crystal will vary from game to game.<br><br>
+                When you win or lose, click another gem to match the next target number and play again.<br><br>
+                Good Luck!!
+                
+            </p>
+            
                 </div>
             </div>
             <div class="row">
-                <div class="column-lg-4 border">
-                    <p>Target Number: <span id="target-number"></span></p>
-                    <p id="winstatus"></p>
+                <div class="column-lg-4 pl-2">
+                    <h3>Target Number:<span id="target-number"></span></h3>
+                    <br>
+                    <h3 id="winstatus"></h3>
                 </div>
-                <div class="column-lg-2 border">
-                    <p>Wins: <span id="winstotal"></span></p><br>
-                    <p>Losses: <span id="lossestotal"></span></p>
+                <div class="column-lg-2">
+                    <div class="empty"></div>
+                </div>
+                <div class="column-lg-2 border-left pl-5">
+                    <h3>Wins: <span id="winstotal"></span></h3><br>
+                    <h3>Losses: <span id="lossestotal"></span></h3>
 
                 </div>
             </div>
-            <div class="row">
-                <div class="column-lg-1 border">
+            <div class="row p-3">
+                <div class="column-lg-1">
                     <img src="assets/images/blueGem.jpg" id="bluegem" alt="image">
                 </div>
-                <div class="column-lg-1 border">
+                <div class="column-lg-1">
                     <img src="assets/images/greenGem.jpg" id="greengem" alt="image">
                 </div>
-                <div class="column-lg-1 border">
+                <div class="column-lg-1">
                     <img src="assets/images/redGem.jpg" id="redgem" alt="image">
                 </div>
-                <div class="column-lg-1 border">
+                <div class="column-lg-1">
                     <img src="assets/images/yellowGem.jpg" id="yellowgem" alt="image">
                 </div>
             </div>
         
             <div class="row">
-                <div class="column-lg-3 border">
-                    <p>Current Score Is: <span id="score"></span></p>
+                <div class="column-lg-3 pl-2">
+                    <h3>Current Score Is: <span id="score"></span></h3>
                 </div>
             </div>
         </div>
